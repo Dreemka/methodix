@@ -1,16 +1,4 @@
 <?php
-//Подключаем JS скрипт для управления карточками методов 
-function custom_user_page_selection_scripts() {
-	if (is_user_logged_in()) {
-			wp_enqueue_script('custom-user-page-selection', get_template_directory_uri() . '/js/custom-user-page-selection.js', array('jquery'), null, true);
-			wp_localize_script('custom-user-page-selection', 'ajax_object', array(
-					'ajax_url' => admin_url('admin-ajax.php'),
-					'nonce' => wp_create_nonce('custom_user_page_selection_nonce')
-			));
-	}
-}
-add_action('wp_enqueue_scripts', 'custom_user_page_selection_scripts');
-
 
 //Шорткод вывода карточек методов и поиска
 if (file_exists(get_template_directory() . '/custom-functions/methods-cards/page-methods.php')) {

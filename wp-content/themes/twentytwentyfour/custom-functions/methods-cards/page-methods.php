@@ -21,14 +21,14 @@ function custom_user_page_selection() {
       $output .= '<div id="loader" style="display: none;">Загрузка...</div>';
 
       $output .= '<div id="search-results">';
-      $output .= '<form method="post" action="' . esc_url(admin_url('admin-post.php')) . '">';
-      $output .= '<input type="hidden" name="action" value="save_user_page_selection">';
+    //   $output .= '<form method="post" action="' . esc_url(admin_url('admin-post.php')) . '">';
+    //   $output .= '<input type="hidden" name="action" value="save_user_page_selection">';
       $output .= '<div class="methodix-method-cards-wrapper">';
-
       // Здесь будет выводиться результат поиска через AJAX
       $output .= '</div>';
-      $output .= '<input type="submit" name="save_selection" value="Сохранить выбор">';
-      $output .= '</form>';
+
+    //   $output .= '<input type="submit" name="save_selection" value="Сохранить выбор">';
+    //   $output .= '</form>';
       $output .= '<div id="search-results-comparison">';
       $output .= '<div id="loader-comparison" style="visibility: hidden;">
         <svg version="1.1" id="L2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
