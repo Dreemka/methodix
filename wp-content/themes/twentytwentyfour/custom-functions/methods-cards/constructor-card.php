@@ -16,7 +16,7 @@ function custom_user_page_search() {
   }
 
   // Применяем фильтры
-  $meta_query = array('relation' => 'OR');
+  $meta_query = array('relation' => 'AND');
 
   // Применяем фильтры
   foreach ($filters_arr as $filter => $value) {
@@ -128,8 +128,8 @@ function custom_user_page_search() {
           echo '</div>';
           echo '<hr>';
           echo '<div class="methodix-method-card-footer methodix-display-flex-row-end">';
-          echo '<input type="checkbox" class="display-none  methodix-hidden-checkbox" name="selected_pages[]" id="'.$page->ID.'" value="' . $page->ID . '" ' . $checked . '>';
-          echo '<label for="'.$page->ID.'" id="MethodixclickableLabel" class="methodix-label methodix-suggestion-chip methodix-chip-icon">';
+          echo '<input type="checkbox" class="display-none  methodix-hidden-checkbox" name="selected_pages[]" id="'.$page->ID.'" value="' . $page->ID . '" ' . $checked . ' onChange="handleCheckboxChange(this)">';
+          echo '<label for="'.$page->ID.'" id="MethodixclickableLabel-'.$page->ID.'" class="methodix-label methodix-suggestion-chip methodix-chip-icon">';
           echo '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
             <path d="M13.125 0.687988C12.2805 0.701124 11.4544 0.936878 10.7301 1.37144C10.0058 1.80601 9.40905 2.42399 9.00003 3.16299C8.59101 2.42399 7.99423 1.80601 7.26996 1.37144C6.54569 0.936878 5.71957 0.701124 4.87503 0.687988C3.52874 0.746481 2.26031 1.33543 1.34687 2.32616C0.433424 3.3169 -0.0507831 4.62888 2.97532e-05 5.97549C2.97532e-05 11.0567 8.21703 16.9255 8.56653 17.1745L9.00003 17.4812L9.43353 17.1745C9.78303 16.927 18 11.0567 18 5.97549C18.0508 4.62888 17.5666 3.3169 16.6532 2.32616C15.7398 1.33543 14.4713 0.746481 13.125 0.687988ZM9.00003 15.6347C6.56028 13.8122 1.50003 9.33474 1.50003 5.97549C1.44876 5.02653 1.7748 4.09579 2.40705 3.38626C3.0393 2.67674 3.92646 2.246 4.87503 2.18799C5.8236 2.246 6.71076 2.67674 7.34301 3.38626C7.97526 4.09579 8.3013 5.02653 8.25003 5.97549H9.75003C9.69876 5.02653 10.0248 4.09579 10.6571 3.38626C11.2893 2.67674 12.1765 2.246 13.125 2.18799C14.0736 2.246 14.9608 2.67674 15.593 3.38626C16.2253 4.09579 16.5513 5.02653 16.5 5.97549C16.5 9.33624 11.4398 13.8122 9.00003 15.6347Z" />
             </svg>';

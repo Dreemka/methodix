@@ -216,9 +216,12 @@ if (file_exists(get_template_directory() . '/custom-functions/custom-menu.php'))
 	require_once get_template_directory() . '/custom-functions/custom-menu.php';
 }
 
-
 if (file_exists(get_template_directory() . '/custom-functions/included-style.php')) {
 	require_once get_template_directory() . '/custom-functions/included-style.php';
+}
+
+if (file_exists(get_template_directory() . '/custom-functions/included-js.php')) {
+	require_once get_template_directory() . '/custom-functions/included-js.php';
 }
 
 if (file_exists(get_template_directory() . '/custom-functions/var-style.php')) {
@@ -231,5 +234,21 @@ if (file_exists(get_template_directory() . '/custom-functions/methods-cards/card
 
 if (file_exists(get_template_directory() . '/custom-functions/menu-icons.php')) {
 	require_once get_template_directory() . '/custom-functions/menu-icons.php';
+}
+
+add_action('admin_post_save_user_page_selection', 'handle_save_user_page_selection');
+add_action('admin_post_nopriv_save_user_page_selection', 'handle_save_user_page_selection');
+
+function handle_save_user_page_selection() {
+    if (isset($_POST['selected_page']) && isset($_POST['is_checked'])) {
+        $page_id = intval($_POST['selected_page']);
+        $is_checked = intval($_POST['is_checked']);
+
+        // Здесь добавьте логику для сохранения состояния чекбокса
+        // Например, обновите метаданные пользователя или другую информацию
+
+        // Не забудьте завершить выполнение скрипта
+        wp_die();
+    }
 }
 

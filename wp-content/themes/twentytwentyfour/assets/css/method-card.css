@@ -256,13 +256,13 @@ h5{
   line-height: 0.5;
 }
 
-#MethodixclickableLabel {
+.methodix-label {
   svg {
     fill: var(--wp--preset--color--contrast-2);
   }
 }
 
-.methodix-hidden-checkbox:checked + #MethodixclickableLabel {
+.methodix-hidden-checkbox:checked + .methodix-label {
   background: var(--wp--preset--color--contrast-2);
   svg {
     fill: #ffffff;
